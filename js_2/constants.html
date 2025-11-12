@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Const vs Let</title>
+</head>
+<body>
+    <h1>Understanding Const and Let</h1>
+    <div id="output"></div>
+    
+    <script>
+        // Use const for values that won't change
+        const birthYear = 2005;  // Your birth year never changes
+        const hometown = "Springfield";  // Where you were born doesn't change
+        const schoolName = "Central High";
+        
+        // Use let for values that will change
+        let currentYear = 2025;  // The year keeps changing
+        let age = 20;  // Your age changes every year
+        let grade = 10;  // Your grade changes
+        
+        // Try to change a const - this will cause an ERROR!
+        // birthYear = 2006;  // Uncomment this line to see the error
+        
+        // Changing let variables is fine
+        age = 21;
+        grade = 11;
+        
+        // Display the information
+        let info = `
+            Birth Year: ${birthYear} (const - cannot change)<br>
+            Hometown: ${hometown} (const - cannot change)<br>
+            Current Age: ${age} (let - can change)<br>
+            Current Grade: ${grade} (let - can change)
+        `;
+        
+        document.getElementById('output').innerHTML = info;
+        
+        console.log("Birth Year:", birthYear);
+        console.log("Age:", age);
+    </script>
+</body>
+</html>

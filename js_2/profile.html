@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <p id="bio"></p>
+    <p id="details"></p>
+    
+    <script>
+        // Store profile information in variables
+        let firstName = "Max";
+        let lastName = "Kirsh";
+        let age = 17;
+        let city = "Cleveland";
+        let isStudent = true;
+        
+        // Display the full name
+        document.getElementById('name').textContent = `${firstName} ${lastName}`;
+        
+        // Display bio
+        document.getElementById('bio').textContent = `I am ${age} years old and live in ${city}.`;
+        
+        // Display student status
+        document.getElementById('details').textContent = `Student: ${isStudent}`;
+        
+        // Also log everything to console
+        console.log('Name:', firstName, lastName);
+        console.log('Age:', age);
+        console.log('City:', city);
+        console.log('Is Student:', isStudent);
+    </script>
+</body>
+</html>

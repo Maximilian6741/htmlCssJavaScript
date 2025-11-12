@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Reassignment</title>
+</head>
+<body>
+    <h1>Score Tracker</h1>
+    
+    <h2 id="initial"></h2>
+    <h2 id="updated"></h2>
+    <h2 id="final"></h2>
+    
+    <script>
+        // Step 1: Create score variable
+        let score = 0;
+        
+        // Step 2: Display and log initial score
+        document.getElementById("initial").textContent = "Initial score: " + score;
+        console.log("Score:", score);
+        
+        // Step 3: Add 10 to score
+        score += 10;  // This means score = score + 10
+        
+        // Step 4: Display and log updated score
+        // Your code here...
+        document.getElementById("updated").textContent = "Updated score: " + score;
+        console.log("Score:", score);
+        // Step 5: Add 5 more to score
+        // Your code here...
+        score += 5
+        
+        // Step 6: Display and log final score
+        // Your code here...
+        document.getElementById("final").textContent = "Final score: " + score;
+        console.log("Score:", score);
+    </script>
+</body>
+</html>
