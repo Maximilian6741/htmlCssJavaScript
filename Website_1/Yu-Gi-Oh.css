@@ -1,0 +1,70 @@
+:root {
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff00ff;
+    --gold: #ffd700;
+    --bg-dark: #050508;
+}
+
+body {
+    background: var(--bg-dark);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: rgba(0,0,0,0.9);
+    border-bottom: 2px solid var(--neon-blue);
+    padding: 15px 5%;
+    position: sticky; top: 0; z-index: 1000;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; letter-spacing: 4px; color: var(--neon-blue); }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: white; text-decoration: none; font-size: 0.8rem; }
+
+.section-container { padding: 60px 5%; min-height: 100vh; }
+.neon-text { text-align: center; color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+/* 3D Tools */
+.duel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.lp-card, .tools-card { background: #111; border: 1px solid #1a1a2e; padding: 20px; border-radius: 10px; }
+.lp-display { font-size: 4rem; color: var(--neon-pink); text-align: center; text-shadow: 0 0 15px var(--neon-pink); }
+
+.coin-container, .dice-container { width: 80px; height: 80px; perspective: 1000px; margin: 10px auto; cursor: pointer; }
+#coin, #dice { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+.side, .face { position: absolute; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; font-weight: bold; }
+.side { border-radius: 50%; background: var(--gold); color: #000; backface-visibility: hidden; }
+.back { transform: rotateY(180deg); }
+.face { background: var(--neon-blue); color: #000; }
+
+.f-1 { transform: translateZ(40px); }
+.f-6 { transform: rotateY(180deg) translateZ(40px); }
+.f-3 { transform: rotateY(90deg) translateZ(40px); }
+.f-4 { transform: rotateY(-90deg) translateZ(40px); }
+.f-2 { transform: rotateX(90deg) translateZ(40px); }
+.f-5 { transform: rotateX(-90deg) translateZ(40px); }
+
+/* Deck Builder & Previews */
+.builder-interface { display: grid; grid-template-columns: 320px 1fr 280px; gap: 20px; }
+.preview-panel { background: #000; border: 2px solid var(--neon-blue); padding: 15px; text-align: center; position: sticky; top: 100px; }
+.img-frame { height: 350px; background: #111; margin-bottom: 10px; border: 1px solid #333; overflow: hidden; }
+#main-preview { width: 100%; height: 100%; object-fit: contain; transition: 0.3s; }
+.hidden-slot { display: none; } /* Used only to store URLs */
+
+.mini-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; max-height: 500px; overflow-y: auto; }
+.db-card { background: #1a1a1a; padding: 10px; border: 1px solid #333; cursor: pointer; font-size: 0.6rem; }
+.db-card:hover { border-color: var(--neon-blue); }
+
+/* Shop */
+.shop-layout { display: grid; grid-template-columns: 1fr 280px; gap: 20px; }
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
+.product-card { background: #111; border: 1px solid #222; padding: 10px; text-align: center; }
+.cart-panel { background: #0a0a0f; border: 1px solid var(--neon-pink); padding: 15px; height: fit-content; position: sticky; top: 100px; }
+
+input { background: #111; border: 1px solid var(--neon-blue); color: white; padding: 10px; width: 90%; margin-bottom: 10px; }
+button { background: var(--neon-blue); border: none; padding: 8px 12px; cursor: pointer; font-family: 'Orbitron'; font-size: 0.7rem; font-weight: bold; }
+.clear-btn { width: 100%; background: var(--neon-pink); color: white; margin-top: 10px; }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YGO Nexus | Duel Station</title>
+    <link rel="stylesheet" href="Yu-Gi-Oh.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">YGO<span>NEXUS</span></div>
+            <ul>
+                <li><a href="#duel-tools">DUEL TOOLS</a></li>
+                <li><a href="#deck-builder">DECK BUILDER</a></li>
+                <li><a href="#shop">SHOP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="duel-tools" class="section-container">
+            <h2 class="neon-text">DUEL INTERFACE</h2>
+            <div class="duel-grid">
+                <div class="lp-card">
+                    <h3>LIFE POINTS</h3>
+                    <div id="lp-1" class="lp-display">8000</div>
+                    <div class="lp-input-group">
+                        <input type="number" id="calc-1" placeholder="Value...">
+                        <div class="lp-btns">
+                            <button onclick="updateLP(1, 'sub')">-</button>
+                            <button onclick="updateLP(1, 'add')">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tools-card">
+                    <div class="randomizer-box">
+                        <div class="coin-container" onclick="flipCoin()">
+                            <div id="coin">
+                                <div class="side front">H</div>
+                                <div class="side back">T</div>
+                            </div>
+                        </div>
+                        <p>CLICK TO FLIP</p>
+                    </div>
+                    <div class="randomizer-box">
+                        <div class="dice-container" onclick="rollDice()">
+                            <div id="dice">
+                                <div class="face f-1">1</div>
+                                <div class="face f-6">6</div>
+                                <div class="face f-3">3</div>
+                                <div class="face f-4">4</div>
+                                <div class="face f-2">2</div>
+                                <div class="face f-5">5</div>
+                            </div>
+                        </div>
+                        <p>CLICK TO ROLL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deck-builder" class="section-container">
+            <h2 class="neon-text">DECK CONSTRUCTOR</h2>
+            <div class="builder-interface">
+                
+                <div class="preview-panel">
+                    <div class="img-frame">
+                        <img id="main-preview" src="placeholder.jpg" alt="Card Preview">
+                    </div>
+                    <h3 id="preview-name">Select Card</h3>
+                    <p id="preview-desc">Hover to view data.</p>
+                    
+                    <div class="image-slots">
+                        <img id="slot-1" class="hidden-slot" src="bewd.jpg">
+                        <img id="slot-2" class="hidden-slot" src="OIP.webp">
+                        <img id="slot-3" class="hidden-slot" src="efo.webp">
+                        <img id="slot-4" class="hidden-slot" src="rebd.webp">
+                        <img id="slot-6" class="hidden-slot" src="pog.webp">
+                        <img id="slot-6" class="hidden-slot" src="mr.webp">
+                        <img id="slot-6" class="hidden-slot" src="pog.webp">
+                    </div>
+                </div>
+
+                <div class="builder-controls">
+                    <input type="text" id="builderSearch" placeholder="Search Database..." onkeyup="searchDatabase()">
+                    <div id="database-results" class="mini-grid"></div>
+                </div>
+
+                <div class="current-deck">
+                    <h3>MAIN DECK (<span id="deck-count">0</span>/60)</h3>
+                    <div id="deck-list-display"></div>
+                    <button class="clear-btn" onclick="clearDeck()">DELETE ALL</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop" class="section-container">
+            <h2 class="neon-text">MARKETPLACE</h2>
+            <div class="shop-controls">
+                <input type="text" id="searchInput" placeholder="Search Shop..." onkeyup="filterShop()">
+            </div>
+            <div class="shop-layout">
+                <div id="product-grid" class="shop-grid"></div>
+                <div class="cart-panel">
+                    <h3>CART</h3>
+                    <div id="cart-items"></div>
+                    <div class="cart-total">TOTAL: $<span id="total-amount">0.00</span></div>
+                    <button class="checkout-btn" onclick="checkout()">PURCHASE</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="Yu-Gi-Oh.js"></script>
+</body>
+</html>
